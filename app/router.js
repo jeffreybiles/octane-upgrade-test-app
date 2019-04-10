@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('3-1', function() {
     this.route('named-arguments');
+    this.route('es5-getters');
   });
 });
 
