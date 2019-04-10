@@ -1,0 +1,13 @@
+<h1>Invoked With {{@invocationStyle}}</h1>
+
+<table>
+  <tr><td>From outside:</td><td>{{namedArgument}}</td></tr>
+  <tr><td>From outside with @:</td><td>{{@namedArgument}}</td></tr>
+  <tr><td>From outside with this:</td><td>{{this.namedArgument}}</td></tr>
+</table>
+<hr>
+<table>
+  <tr><td>From component:</td><td>{{componentContextProperty}}</td></tr>
+  <tr><td>From component with @:</td><td>{{@componentContextProperty}}</td></tr>
+  <tr><td>From component with this:</td><td>{{this.componentContextProperty}}</td></tr>
+</table>
