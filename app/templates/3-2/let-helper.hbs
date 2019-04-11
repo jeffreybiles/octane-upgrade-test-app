@@ -1,0 +1,32 @@
+{{!-- plain --}}
+Welcome back, {{concat (capitalize person.firstName) ' ' (capitalize person.lastName)}}<br>
+<br>
+First Name: {{capitalize person.firstName}}<br>
+Last Name: {{capitalize person.lastName}}<br>
+
+<hr>
+
+{{!-- #let helper --}}
+{{#let (capitalize person.firstName) (capitalize person.lastName) as |firstName lastName| }}
+  Welcome back, {{concat firstName ' ' lastName}}<br>
+  <br>
+  First Name: {{firstName}}<br>
+  Last Name: {{lastName}}<br>
+{{/let}}
+
+<hr>
+
+{{!-- #with helper --}}
+
+{{#with (capitalize person.firstName) as |firstName| }}
+  {{#with (capitalize person.lastName) as |lastName| }}
+    {{!-- note: if either of these is null, this block will not be displayed --}}
+    Welcome back, {{concat firstName ' ' lastName}}<br>
+    <br>
+    First Name: {{firstName}}<br>
+    Last Name: {{lastName}}<br>
+  {{/with}}
+{{/with}}
+
+{{!-- you could also do it with a component, although that is less ideal for something of this specific complexity --}}
+{{!-- in more complex cases, however, the component may be the correct choice --}}

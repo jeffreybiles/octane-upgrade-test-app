@@ -11,6 +11,10 @@ Router.map(function() {
     this.route('named-arguments');
     this.route('es5-getters');
   });
+
+  this.route('3-2', function() {
+    this.route('let-helper');
+  });
 });
 
 export default Router;
