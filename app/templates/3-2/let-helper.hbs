@@ -8,7 +8,7 @@ Last Name: {{capitalize person.lastName}}<br>
 
 {{!-- #let helper --}}
 {{#let (capitalize person.firstName) (capitalize person.lastName) as |firstName lastName| }}
-  Welcome back, {{concat firstName ' ' lastName}}<br>
+  Welcome back, {{concat firstName " " lastName}}<br>
   <br>
   First Name: {{firstName}}<br>
   Last Name: {{lastName}}<br>

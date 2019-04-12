@@ -1,23 +1,18 @@
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
+import { computed, action } from '@ember/object';
 
-export default Controller.extend({
-  firstName: 'Jeff',
-  lastName: 'Biles',
+export default class ES5GetterController extends Controller {
+  firstName = 'Ember'
+  lastName = 'Octane'
 
-  fullName: computed('firstName', 'lastName', function(){
+  @computed('firstName', 'lastName')
+  get fullName(){
     return `${this.firstName} ${this.lastName}`
-  }),
-
-  actions: {
-    doubleName(){
-      // this.firstName = `${this.firstName}${this.firstName}`// this won't work until tracked properties
-      this.set('firstName', `${this.firstName}${this.firstName}`); //this will work
-    }
-  },
-
-  // you can still use ES5 getters on fullName, firstName, etc... you just can't call it on ones defined by unknownProperty
-  unknownProperty(key){
-    return `Unknown: ${key}`;
   }
-});
+
+  @action
+  doubleName(){
+    // this.firstName = `${this.firstName}${this.firstName}`// this won't work until tracked properties
+    this.set('firstName', `${this.firstName}${this.firstName}`); //this will work
+  }
+}
