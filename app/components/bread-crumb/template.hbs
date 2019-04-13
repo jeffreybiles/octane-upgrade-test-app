@@ -1,0 +1,11 @@
+{{#if @currentRoute.parent}}
+    <BreadCrumb @currentRoute={{@currentRoute.parent}} />
+
+    {{#unless this.isIndex}}
+      >>
+    {{/unless}}
+{{/if}}
+
+{{#unless this.isIndex}}
+  {{link-to this.localName @currentRoute.name}}
+{{/unless}}
