@@ -1,5 +1,5 @@
 import Component from '@ember/component';
 
-export default Component.extend({
-  componentContextProperty: 'It Works'
-});
+export default class NamedArgumentComponent extends Component {
+  componentContextProperty = 'It Works'
+}

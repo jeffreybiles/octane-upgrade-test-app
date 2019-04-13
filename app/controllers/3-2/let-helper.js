@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  person: {
+export default class LetHelperController extends Controller {
+  person = {
     firstName: 'Ember',
     lastName: 'Octane'
   }
-});
+}
