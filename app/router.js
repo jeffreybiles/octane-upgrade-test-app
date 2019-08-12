@@ -1,5 +1,6 @@
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
+import { get } from '@ember/object';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
@@ -17,4 +18,12 @@ Router.map(function() {
   });
 });
 
-export default Router;
+export default Router.extend({
+  init() {
+    this._super(...arguments);
+    this.on('routeDidChange', (transition) => {
+      let title = get(transition.to, 'metadata.title') || get(transition.to, 'parent.metadata.title') || document.title;
+      document.title = title;
+    });
+  },
+});
