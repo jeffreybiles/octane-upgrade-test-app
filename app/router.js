@@ -16,6 +16,11 @@ Router.map(function() {
   this.route('3-2', function() {
     this.route('let-helper');
   });
+
+  this.route('3-10', function() {
+    this.route('built-in-components', {path: 'built-in-components/:argument'});
+    this.route('multiple-arguments', {path: 'multiple-arguments/:argument1/:argument2'});
+  });
 });
 
 export default Router.extend({
