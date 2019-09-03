@@ -21,6 +21,10 @@ Router.map(function() {
     this.route('built-in-components', {path: 'built-in-components/:argument'});
     this.route('multiple-arguments', {path: 'multiple-arguments/:argument1/:argument2'});
   });
+
+  this.route('3-11', function(){
+    this.route('action-replacements');
+  })
 });
 
 export default Router.extend({

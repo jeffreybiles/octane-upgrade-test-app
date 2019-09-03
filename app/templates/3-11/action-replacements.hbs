@@ -1,0 +1,19 @@
+<h1>
+  Team Orange:
+  <span style="color: orange;">
+    {{orangeNumber}}
+  </span>
+</h1>
+
+<IncrementButtons @incrementProperty={{action this.incrementProperty "orangeNumber"}}
+                  @incrementValues={{array -1 1 5 10}} />
+
+
+<h1>Team Purple:
+  <span style="color: purple;">
+    {{purpleNumber}}
+  </span>
+</h1>
+
+<IncrementButtons @incrementProperty={{fn this.incrementProperty "purpleNumber"}}
+                  @incrementValues={{array -1 1 5 10}} />

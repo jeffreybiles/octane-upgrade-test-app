@@ -1,0 +1,10 @@
+{{#each @incrementValues as |incrementValue|}}
+  <button {{on 'click' (fn @incrementProperty incrementValue)}}>
+    +{{incrementValue}}
+  </button>
+{{/each}}
+
+
+<button {{on 'click' (fn @incrementProperty 100)}}>
+  +TONS
+</button>
